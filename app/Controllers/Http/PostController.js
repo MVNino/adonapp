@@ -17,6 +17,7 @@ class PostController {
             },
         ]
         
+        
         return view.render('posts.index', {
             title: 'Marlon title',
             posts: posts,
