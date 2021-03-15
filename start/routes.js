@@ -23,7 +23,12 @@ Route.get('/test/:id', ({params}) => `Hello World ${params.id}`)
 
 Route.on('/').render('welcome')
 
-Route.get('posts', 'PostController.index')
-Route.post('posts', 'PostController.store')
-Route.get('posts/create', 'PostController.create')
+Route.get('/posts', 'PostController.index')
+Route.post('/posts', 'PostController.store')
+Route.get('/posts/create', 'PostController.create')
+
+Route.put('/posts/:id', 'PostController.update');
+Route.delete('/posts/:id', 'PostController.destroy');
+Route.get('/posts/edit/:id', 'PostController.edit');
+
 Route.get('/posts/:id', 'PostController.show')
