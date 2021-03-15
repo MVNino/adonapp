@@ -4,9 +4,15 @@
 
 <h1>{{ title }}</h1>
 
-<ul>
+@if(old('notification'))
+<div class="alert alert-success">
+    {{ old('notification.message') }}
+</div>
+@endif
+
+<ul class="list-group">
     @each(post in posts)
-    <li>{{ post.title }} - {{ post.body }}</li>
+    <li class="list-group-item"><a href="/posts/{{ post.id }}">{{ post.title }} - {{ post.body }}</a></li>
     @endeach
 </ul>
 @endsection
